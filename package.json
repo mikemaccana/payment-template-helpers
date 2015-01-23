@@ -1,0 +1,19 @@
+{
+  "name": "payment-template-helpers",
+  "description": "Presents payment information in any JavaScript-based templating language.",
+  "version": "0.0.4",
+  "author": "Mike MacCana <mike.maccana@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikemaccana/payment-template-helpers.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "quaderno"
+  ],
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}
