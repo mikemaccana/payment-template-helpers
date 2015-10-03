@@ -4,13 +4,13 @@
 
 ## Installation
 
-Presents payment information in any JavaScript-based templating language (frontend of backend). See the Methods section below. The code is pretty simple, the main value add is the unit tests. 
+Presents payment information in any JavaScript-based templating language (frontend of backend). See the Methods section below. The code is pretty simple, the main value add is the unit tests.
 
 ## Usage
 
     var paymentTemplateHelpers = require('payment-template-helpers');
 
-paymentTemplateHelpers takes a single argument, `helpers` which is an object to be extended with the helper methods. 
+paymentTemplateHelpers takes a single argument, `helpers` which is an object to be extended with the helper methods.
 
 For example, using __ractive.js__:
 
@@ -27,6 +27,12 @@ For example, using __ractive.js__:
 
  - __percentageDiscount__ Number, required. A percentage, in whole number.
  - __amount__ Number, required. Amount of money in minor units (cents, Eurocents, etc)
+
+
+`getProRatedPrice` returns a discounted amount, based on a yearly rate, for a product with an expiry date
+
+  - __yearlyPrice__ Number, required. A yearly price in minor units (cents, Eurocents, etc)
+  - __expiry__ Date, required. Date when the product will expire.
 
 
 `amountOff` returns a discounted amount, never less than 0.

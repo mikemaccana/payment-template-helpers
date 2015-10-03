@@ -1,3 +1,7 @@
+var SECONDS_IN_A_DAY = 1000 * 60 * 60 * 24;
+
+var log = console.log.bind(console)
+
 // Frequently used helper expressions http://docs.ractivejs.org/latest/expressions
 module.exports = function(helpers){
 
@@ -31,7 +35,14 @@ module.exports = function(helpers){
 		} else {
 			return (amount/100).toFixed( 2 );
 		}
+	}
 
+	helpers.getProRatedPrice = function(yearlyPrice, expiry) {
+		var now = new Date();
+		var daysLeft = (expiry - now) / SECONDS_IN_A_DAY
+		var proRatedPrice = yearlyPrice / 365 * daysLeft;
+		var proRatedPriceMajorUnits = helpers.amountToDollarsCents(proRatedPrice, true)
+		return proRatedPriceMajorUnits
 	}
 
 	helpers.toDate = function(stripeDate){

@@ -1,11 +1,35 @@
 {
-  "name": "payment-template-helpers",
-  "description": "Presents payment information in any JavaScript-based templating language.",
-  "version": "0.0.5",
   "author": {
-    "name": "Mike MacCana",
-    "email": "mike.maccana@gmail.com"
+    "email": "mike.maccana@gmail.com",
+    "name": "Mike MacCana"
   },
+  "bugs": {
+    "url": "https://github.com/mikemaccana/payment-template-helpers/issues"
+  },
+  "dependencies": {},
+  "description": "Presents payment information in any JavaScript-based templating language.",
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "1097bdbb0de163cfe1890b7b6bd8eca4237a5078",
+    "tarball": "http://registry.npmjs.org/payment-template-helpers/-/payment-template-helpers-0.0.5.tgz"
+  },
+  "gitHead": "2660182a9c8cacf2111dca6dc351bd744ae3c1f4",
+  "homepage": "https://github.com/mikemaccana/payment-template-helpers",
+  "installable": true,
+  "keywords": [
+    "quaderno"
+  ],
+  "maintainers": [
+    {
+      "name": "mikemaccana",
+      "email": "mike.maccana@gmail.com"
+    }
+  ],
+  "name": "payment-template-helpers",
+  "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/mikemaccana/payment-template-helpers.git"
@@ -13,19 +37,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [
-    "quaderno"
-  ],
-  "devDependencies": {
-    "mocha": "^2.1.0"
-  },
-  "readme": "# Payment Template Helpers\n\n[![Build Status](https://travis-ci.org/mikemaccana/payment-template-helpers.png)](https://travis-ci.org/mikemaccana/payment-template-helpers)\n\n## Installation\n\nPresents payment information in any JavaScript-based templating language (frontend of backend). See the Methods section below. The code is pretty simple, the main value add is the unit tests. \n\n## Usage\n\n    var paymentTemplateHelpers = require('payment-template-helpers');\n\npaymentTemplateHelpers takes a single argument, `helpers` which is an object to be extended with the helper methods. \n\nFor example, using __ractive.js__:\n\n    paymentTemplateHelpers(Ractive.defaults.data)\n\n### Methods\n\n`amountToDollarsCents` returns a string representation of some amount of money. If the amount ends in 00, it will just show the major units. If the amount is less than or equal to 0, it will return 'FREE'. It has the following options:\n\n - __amount__ Number, required. Amount of money in minor units (cents, Eurocents, etc)\n\n\n`percentOff` returns a discounted amount, never less than 0.\n\n - __percentageDiscount__ Number, required. A percentage, in whole number.\n - __amount__ Number, required. Amount of money in minor units (cents, Eurocents, etc)\n\n\n`amountOff` returns a discounted amount, never less than 0.\n\n - __percentageDiscount__ Number, required. Discount in minor units (cents, Eurocents, etc)\n - __amount__ Number, required. Amount of money in minor units (cents, Eurocents, etc)\n\n## TODO\n\nSupport currencies with more than two digits for minor units.\n\n## Tests\n\nRun `mocha`\n",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/mikemaccana/payment-template-helpers/issues"
-  },
-  "homepage": "https://github.com/mikemaccana/payment-template-helpers",
-  "_id": "payment-template-helpers@0.0.4",
-  "_shasum": "bac48aeeb3decddf0308e85a2140220a3fa81ca1",
-  "_from": "payment-template-helpers@"
+  "version": "1.0.0"
 }
