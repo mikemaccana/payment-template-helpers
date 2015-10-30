@@ -13,14 +13,15 @@
   },
   "directories": {},
   "dist": {
-    "shasum": "1097bdbb0de163cfe1890b7b6bd8eca4237a5078",
-    "tarball": "http://registry.npmjs.org/payment-template-helpers/-/payment-template-helpers-0.0.5.tgz"
+    "shasum": "bf13df8ce33dae419101c5155a4d611e668e9085",
+    "tarball": "http://registry.npmjs.org/payment-template-helpers/-/payment-template-helpers-1.0.0.tgz"
   },
   "gitHead": "2660182a9c8cacf2111dca6dc351bd744ae3c1f4",
   "homepage": "https://github.com/mikemaccana/payment-template-helpers",
   "installable": true,
   "keywords": [
-    "quaderno"
+    "payments",
+    "payment"
   ],
   "maintainers": [
     {
@@ -32,10 +33,10 @@
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikemaccana/payment-template-helpers.git"
+    "url": "git+https://github.com/mikemaccana/payment-template-helpers.git"
   },
   "scripts": {
     "test": "mocha"
   },
-  "version": "1.0.0"
+  "version": "2.0.0"
 }

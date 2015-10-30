@@ -8,13 +8,11 @@ Presents payment information in any JavaScript-based templating language (fronte
 
 ## Usage
 
-    var paymentTemplateHelpers = require('payment-template-helpers');
+	var paymentTemplateHelpers = require('payment-template-helpers');
 
-paymentTemplateHelpers takes a single argument, `helpers` which is an object to be extended with the helper methods.
+You'd typically add it to the helper methods to your templating system. For example, using __ractive.js__:
 
-For example, using __ractive.js__:
-
-    paymentTemplateHelpers(Ractive.defaults.data)
+  Ractive.defaults.data.paymentTemplateHelpers = paymentTemplateHelpers
 
 ### Methods
 
