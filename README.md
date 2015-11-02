@@ -31,7 +31,7 @@ You'd typically add it to the helper methods to your templating system. For exam
 
   - __yearlyPrice__ Number, required. A yearly price in minor units (cents, Eurocents, etc)
   - __expiry__ Date, required. Date when the product will expire.
-
+  - __multiplier__ Number, optional. For amount of products. Defaults to 1.
 
 `amountOff` returns a discounted amount, never less than 0.
 

@@ -36,10 +36,21 @@ var amountToDollarsCents = function(amount, roundDown){
 	}
 }
 
-var getProRatedPrice = function(yearlyPrice, expiry) {
+// yearlyPrice yearly price, minor units
+// expiry String final date
+// multiplier NUmber for numtuple products
+// fakeDate String fake date for now (used for unit testing)
+var getProRatedPrice = function(yearlyPrice, expiry, multiplier, fakeDate) {
+	if ( ! multiplier ) {
+		multiplier = 1
+	}
 	var now = new Date();
+	if ( fakeDate ) {
+		now = new Date(fakeDate)
+	}
 	var daysLeft = (expiry - now) / SECONDS_IN_A_DAY
-	var proRatedPrice = yearlyPrice / 365 * daysLeft;
+	log('yearlyPrice', yearlyPrice, 'daysLeft', daysLeft)
+	var proRatedPrice = yearlyPrice / 365 * daysLeft * multiplier;
 	var proRatedPriceMajorUnits = amountToDollarsCents(proRatedPrice, true)
 	return proRatedPriceMajorUnits
 }

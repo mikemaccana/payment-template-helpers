@@ -4,9 +4,7 @@
 
 var assert = require('assert')
 
-var helpers = {};
-
-require('../index.js')(helpers);
+var helpers = require('../index.js');
 
 var log = console.log.bind(console)
 
@@ -34,12 +32,10 @@ suite('payment-template', function(){
 	});
 
 	suite('discounts', function(){
-		test('handles percentOff', function(){
-			assert.equal(helpers.getProRatedPrice(10000, new Date('2016-OCT-1')), 99);
+		test('handles prorated prices', function(){
+			var proRatedPrice = helpers.getProRatedPrice(10000, new Date('2016-OCT-1'), 1, new Date('2015-NOV-1'))
+			assert.equal(proRatedPrice, 91);
 		});
-	})
-
-	suite('discounts', function(){
 		test('handles percentOff', function(){
 			assert.equal(helpers.percentOff(30,100), 70);
 		});
