@@ -49,7 +49,6 @@ var getProRatedPrice = function(yearlyPrice, expiry, multiplier, fakeDate) {
 		now = new Date(fakeDate)
 	}
 	var daysLeft = (expiry - now) / SECONDS_IN_A_DAY
-	log('yearlyPrice', yearlyPrice, 'daysLeft', daysLeft)
 	var proRatedPrice = yearlyPrice / 365 * daysLeft * multiplier;
 	var proRatedPriceMajorUnits = amountToDollarsCents(proRatedPrice, true)
 	return proRatedPriceMajorUnits
