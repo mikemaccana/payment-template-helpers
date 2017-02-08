@@ -8,11 +8,11 @@ Presents payment information in any JavaScript-based templating language (fronte
 
 ## Usage
 
-  var paymentTemplateHelpers = require('payment-template-helpers');
+	var paymentTemplateHelpers = require('payment-template-helpers');
 
 You'd typically add it to the helper methods to your templating system. For example, using __ractive.js__:
 
-  Ractive.defaults.data.paymentTemplateHelpers = paymentTemplateHelpers
+	Ractive.defaults.data.paymentTemplateHelpers = paymentTemplateHelpers
 
 ### Functions
 
@@ -34,9 +34,9 @@ You'd typically add it to the helper methods to your templating system. For exam
 
 `getProRatedPrice` returns a discounted amount, based on a yearly rate, for a product with an expiry date
 
-  - __yearlyPrice__ Number, required. A yearly price in minor units (cents, Eurocents, etc)
-  - __expiry__ Date, required. Date when the product will expire.
-  - __multiplier__ Number, optional. For amount of products. Defaults to 1.
+	- __yearlyPrice__ Number, required. A yearly price in minor units (cents, Eurocents, etc)
+	- __expiry__ Date, required. Date when the product will expire.
+	- __multiplier__ Number, optional. For amount of products. Defaults to 1.
 
 `amountOff` returns a discounted amount, never less than 0.
 
