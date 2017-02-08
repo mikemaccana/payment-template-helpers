@@ -4,17 +4,22 @@
 
 ## Installation
 
-Presents payment information in any JavaScript-based templating language (frontend of backend). See the Methods section below. The code is pretty simple, the main value add is the unit tests.
+Presents payment information in any JavaScript-based templating language (frontend of backend). See the Functions section below. The code is pretty simple, the main value is the unit tests.
 
 ## Usage
 
-	var paymentTemplateHelpers = require('payment-template-helpers');
+  var paymentTemplateHelpers = require('payment-template-helpers');
 
 You'd typically add it to the helper methods to your templating system. For example, using __ractive.js__:
 
   Ractive.defaults.data.paymentTemplateHelpers = paymentTemplateHelpers
 
-### Methods
+### Functions
+
+`currencyToSymbol` returns a symbol to reflect the currency.
+
+- __currency__ String, required. A currency, in upperase. Eg, 'GBP', 'USD'.
+- __countryCode__ String, optional. An ISO3166-alpha-2 country code. Used to show 'USD' in countries which use '$' for their local currency.
 
 `amountToDollarsCents` returns a string representation of some amount of money. If the amount ends in 00, it will just show the major units. If the amount is less than or equal to 0, it will return 'FREE'. It has the following options:
 

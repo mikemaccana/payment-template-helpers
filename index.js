@@ -4,6 +4,10 @@ var log = console.log.bind(console)
 
 // Frequently used helper expressions http://docs.ractivejs.org/latest/expressions
 
+// From https://en.wikipedia.org/wiki/Dollar
+// United States, Canada, Australia, Taiwan, Hong Kong, Singapore, New Zealand, Liberia, Jamaica and Namibia.
+const NON_US_DOLLAR_COUNTRIES = ['AU', 'CA', 'TW', 'HK', 'SG', 'NZ', 'LR', 'JM', 'NA']
+
 var notLessThanZero = function(amount){
 	if ( amount < 0 ) {
 		return 0
@@ -11,12 +15,17 @@ var notLessThanZero = function(amount){
 	return amount
 }
 
-var currencyToSymbol = function(currency){
+var currencyToSymbol = function(currency, countryCode){
 	currency = currency.toUpperCase();
 	var currencySymbols = {
 		'GBP': '£',
 		'USD': '$',
 		'EUR': '€'
+	}
+	if ( currencySymbols[currency] === '$' ) {
+		if ( NON_US_DOLLAR_COUNTRIES.includes(countryCode) ) {
+			return 'USD'
+		}
 	}
 	return currencySymbols[currency];
 }
