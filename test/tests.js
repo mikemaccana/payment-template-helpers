@@ -14,8 +14,8 @@ suite('payment-template', function(){
 		test('turns currencies into symbols', function(){
 			assert.equal(helpers.currencyToSymbol('USD'), '$');
 		});
-		test("shows 'USD' for dollars in Australia", function(){
-			assert.equal(helpers.currencyToSymbol('USD', 'AU'), 'USD');
+		test("shows 'USD ' for dollars in Australia", function(){
+			assert.equal(helpers.currencyToSymbol('USD', 'AU'), 'USD ');
 		});
 	});
 

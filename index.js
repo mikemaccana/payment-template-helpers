@@ -24,7 +24,7 @@ var currencyToSymbol = function(currency, countryCode){
 	}
 	if ( currencySymbols[currency] === '$' ) {
 		if ( NON_US_DOLLAR_COUNTRIES.includes(countryCode) ) {
-			return 'USD'
+			return 'USD '
 		}
 	}
 	return currencySymbols[currency];
