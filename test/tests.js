@@ -35,10 +35,6 @@ suite('payment-template', function(){
 	});
 
 	suite('discounts', function(){
-		test('handles prorated prices', function(){
-			var proRatedPrice = helpers.getProRatedPrice(10000, new Date('2016-OCT-1'), 1, new Date('2015-NOV-1'))
-			assert.equal(proRatedPrice, 91);
-		});
 		test('handles percentOff', function(){
 			assert.equal(helpers.percentOff(30,100), 70);
 		});
@@ -52,6 +48,21 @@ suite('payment-template', function(){
 			assert.equal(helpers.amountOff(110,100), 0);
 		});
 	});
+
+	suite('prorating', function(){
+		var date = new Date('2018-04-19T15:10:03.497Z')
+		var fakeNowDate = new Date('2017-04-19T15:10:03.497Z')
+
+		test('days until works', function(){
+			var daysUntil = helpers.getDaysUntil(date, fakeNowDate)
+			assert.equal(daysUntil, 365)
+		});
+
+		test('getProRatedPrice works', function(){
+			var proRatedPrice = helpers.getProRatedPrice(9900, date, 2, fakeNowDate)
+			assert.equal(proRatedPrice, 19800)
+		})
+	})
 
 
 });

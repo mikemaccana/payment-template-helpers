@@ -63,7 +63,7 @@ var getProRatedPrice = function(yearlyPrice, expiry, multiplier, fakeNowDate) {
 		multiplier = 1
 	}
 	var daysLeft = getDaysUntil(expiry, fakeNowDate);
-	var proRatedPrice = floor(yearlyPrice / (1).year.toDays * daysLeft * multiplier);
+	var proRatedPrice = floor(yearlyPrice / 365 * daysLeft * multiplier);
 	return proRatedPrice;
 }
 
